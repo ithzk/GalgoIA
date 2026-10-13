@@ -1,0 +1,6 @@
+project_id = "galgoai"
+
+# La función valida su propio token de sesión (Google -> JWT propio),
+# por eso se desactiva la verificación de JWT de Supabase.
+[functions.api]
+verify_jwt = false

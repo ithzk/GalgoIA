@@ -1,0 +1,94 @@
+/* File: globals.css */
+
+/* 1. Declara la fuente Pixel Digivolve */
+/* La fuente PixelDigivolve se declara en layout.js (necesita basePath de GitHub Pages) */
+
+/* 2. Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. Import de Tailwind (si lo necesitas) */
+@import "tailwindcss";
+
+/* 4. Variables de color y fuentes */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* 5. Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #171717;
+  }
+}
+
+/* 6. Estilos globales */
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* 7. Clases auxiliares */
+
+/* Contenedor de fondo con scroll */
+.scroll-bg {
+  background-attachment: scroll;
+}
+
+/* Ocultar la scrollbar en textarea */
+textarea::-webkit-scrollbar {
+  display: none;
+}
+textarea {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Tipografías mono y pixel */
+.font-courier {
+  font-family: "Courier New", Courier, monospace;
+}
+.font-pixel {
+  font-family: "PixelDigivolve", sans-serif;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade {
+  animation: fade 0.15s ease-out;
+}
